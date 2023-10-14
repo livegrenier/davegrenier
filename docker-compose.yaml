@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  dave-django:
+    container_name: dave-django
+    networks:
+      - internal
+    restart: always
+    volumes:
+      - ./django-data:/davegrenier/
+      - ./static:/davegrenier/static
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - DEBUG_DAVE=1
+      - SECRET_DAVE_KEY=REDACTED
+      - DJANGO_USER=user
+      - DJANGO_EMAIL=null@gmail.com
+      - DJANGO_SUPERUSER_PASSWORD=REDACTED
+      - SQL_DAVE_ENGINE=django.db.backends.postgresql
+      - SQL_DAVE_DATABASE=davegrenier
+      - SQL_DAVE_USER=postgres
+      - SQL_DAVE_HOST=psql-dave
+      - SQL_DAVE_PASSWORD=REDACTED
+      - SQL_DAVE_PORT=5432
+      - STATIC_DAVE=/davegrenier/static
+      - MEDIA_DAVE_ROOT=/davegrenier/media_root
+    depends_on:
+      - psql-dave
+
+  psql-dave:
+    container_name: psql-dave
+    image: postgres:16.0
+    restart: always
+    networks:
+      - internal
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=REDACTED
+      - POSTGRES_DB=davegrenier
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+
+networks:
+  internal:
