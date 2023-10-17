@@ -7,7 +7,7 @@ from django import forms
 class photo(models.Model):
     file = models.FileField(default='', upload_to='site_media')
 
-class intro(models.Model):
+class about(models.Model):
     title = models.CharField(default='', max_length=200)
     content = RichTextField(default='')
     subtitle = models.CharField(default='', max_length=200)
@@ -15,7 +15,8 @@ class intro(models.Model):
     pdf_icon = models.FileField(default='', upload_to='site_media') 
     def __str__(self):
         return self.title
-class about(models.Model):
+
+class intro(models.Model):
     title = models.CharField(default='', max_length=200)
     text = models.TextField(default='')
     content = RichTextField(default='')
@@ -41,3 +42,6 @@ class skill(models.Model):
     content = RichTextField(default='')
     def __str__(self):
         return self.title
+
+class skill_icon(models.Model):
+    file = models.FileField(default='', upload_to='site_media') 

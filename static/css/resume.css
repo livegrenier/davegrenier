@@ -144,3 +144,17 @@ a {
 a:hover, a:focus, a:active {
   color: #824027;
 }
+
+.container {
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 25%;
+  max-height: 15%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  float: left
+}
