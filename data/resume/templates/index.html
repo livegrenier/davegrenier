@@ -57,6 +57,7 @@
         <div class="subheading mb-5">{{ intro.text }}</div>
         <h4><a href="mailto:{{ intro.email}}">{{ intro.email }}</a></h4>
 	      <p class="mb-5">{{ intro.content|safe }}</p>
+        <h4><img src="/media/{{ intro.pdf_icon }}" width=100 height=100> &nbsp; <a href="/media/{{ intro.pdf }}">{{ intro.subtitle }}</h4></a>
       </div>
     </section>
     {% endfor %}
@@ -111,7 +112,6 @@
       <div class="my-auto">
         <h2>{{ about.title }}</h2>
         <p class="mb-5">{{ about.content|safe }}</p>
-        <h4><img src="/media/{{ about.pdf_icon }}" width=100 height=100> &nbsp; <a href="/media/{{ about.pdf }}">{{ about.subtitle }}</h4></a>
      </div>
     </section>
     {% endfor %}
