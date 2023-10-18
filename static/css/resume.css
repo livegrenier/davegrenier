@@ -153,8 +153,9 @@ a:hover, a:focus, a:active {
 .image {
   max-width: 25%;
   max-height: 15%;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 15px;
+  margin-top: 15px;
   float: left
 }
