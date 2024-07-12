@@ -131,7 +131,6 @@ USE_TZ = True
 
 
 MEDIA_URL = '/media/'
-STATIC_URL = '/static/'
 MEDIA_ROOT = os.environ.get('MEDIA_DAVE_ROOT')
 
 # Static files (CSS, JavaScript, Images)
@@ -139,4 +138,3 @@ MEDIA_ROOT = os.environ.get('MEDIA_DAVE_ROOT')
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.environ.get('STATIC_DAVE')
-
