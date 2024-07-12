@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.12.4-alpine3.19
 
 RUN mkdir /data
 WORKDIR /data

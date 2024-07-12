@@ -1,6 +1,6 @@
-Django==4.2.6
+Django==5.0.7
 gunicorn
 pytz
-django-ckeditor
+django-ckeditor-5
 django_wysiwyg   
 psycopg[binary]

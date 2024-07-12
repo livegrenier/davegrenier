@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 from django import forms
 
 
@@ -9,14 +9,14 @@ class photo(models.Model):
 
 class about(models.Model):
     title = models.CharField(default='', max_length=200)
-    content = RichTextField(default='')
+    content = CKEditor5Field(default='')
     def __str__(self):
         return self.title
 
 class intro(models.Model):
     title = models.CharField(default='', max_length=200)
     text = models.TextField(default='')
-    content = RichTextField(default='')
+    content = CKEditor5Field(default='')
     email = models.CharField(default='', max_length=200)
     pdf = models.FileField(default='', upload_to='site_media') 
     pdf_icon = models.FileField(default='', upload_to='site_media') 
@@ -31,7 +31,7 @@ class experience(models.Model):
     title = models.CharField(default='', max_length=200)
     sub_title = models.CharField(default='', max_length=200)
     job_title = models.CharField(default='', max_length=200)
-    content = RichTextField(default='')
+    content = CKEditor5Field(default='')
     start_date = models.CharField(default="2000-12-31", max_length=11)
     end_date = models.CharField(default='Present', max_length=11)
     def __str__(self):
@@ -39,7 +39,7 @@ class experience(models.Model):
 
 class skill(models.Model):
     title = models.CharField(default='', max_length=200)
-    content = RichTextField(default='')
+    content = CKEditor5Field(default='')
     def __str__(self):
         return self.title
 

@@ -30,13 +30,17 @@ DEBUG = int(os.environ.get('DEBUG_DAVE', default=0))
 
 ALLOWED_HOSTS = ['*']
 
-DJANGO_WYSIWYG_FLAVOR = "ckeditor"
-
 # Application definition
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'imageUpload'],
+    },
+}
 
 INSTALLED_APPS = [
     'django_wysiwyg',
-    'ckeditor',
+    'django_ckeditor_5',
     'resume.apps.ResumeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
