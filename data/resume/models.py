@@ -24,7 +24,7 @@ class intro(models.Model):
     def __str__(self):
         return self.title
 
-class experiance(models.Model):
+class experience(models.Model):
     class Meta:
         ordering = ['number_list']
     number_list = models.CharField(default='#', max_length=11)
